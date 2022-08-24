@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            background-color:snow;
+            backdrop-filter: 200px;
+        }
+        #menu{
+            width:100%;
+            background-color: lavender;
+            color:black;
+            font-size:250%;
+            padding-top:5px;
+            padding-bottom:5px;
+            text-align:center;
+        }
+        a{
+            text-decoration:none;
+            margin-left:15px;
+            padding-left:15px;
+            padding-right:15px;
+            padding-top:3px;
+            padding-bottom:3px;
+            color:black;
+        }
+        a:hover{
+            background-color:aquamarine;
+            font-size:90%;
+            border-radius:10px;
+        }
+        #frm{
+            width:450px;
+            padding-top:20px;
+            padding-bottom: 20px;
+            background-color: beige;
+            border-style: dotted;
+            border-color: black;
+            text-align: center;
+            margin-left:10px;
+            margin-top:10px;
+        }
+        input{
+            margin-top:10px;
+            width:350px;
+            font-size: 150%;
+        }
+        button{
+            margin-top:10px;
+        }
+        #result{
+            width:300px;
+            background-color: aliceblue;
+            border-style: dotted;
+            border-color: black;
+            padding-left:20px;
+            padding-top:20px;
+            padding-bottom:20px;
+            margin-left:10px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="{% url 'calculation' %}">Sign Up</a>
+        <a href="{% url 'user_login' %}">Log-in</a>
+        <a href="{% url 'index' %}">About us</a>
+    </div>
+    <hr style="width:100%">
+    <form action=""method="post"id="frm">
+        <h3>Fill the form to calculate your perfect weight</h3>
+        {% csrf_token %}
+        <input type="text"placeholder="Gender"id="gend"name="gend"><br>
+        <input type="text"placeholder="Height in inches"id="height"name="height"><br>
+        <button>Submit</button>
+    </form>
+    <div id="result">
+        <h2>Result</h2>
+        Gender:{{gend}}<br>
+        Height:{{height}}<br>
+        Weight:{{result}}Kg (Approximately)<br>
+    </div>
+</body>
+</html>

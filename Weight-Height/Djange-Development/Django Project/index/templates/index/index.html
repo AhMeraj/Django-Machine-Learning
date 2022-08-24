@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        #menu{
+            width:100%;
+            background-color: lavender;
+            color:black;
+            font-size:250%;
+            padding-top:5px;
+            padding-bottom:5px;
+            text-align:center;
+        }
+        a{
+            text-decoration:none;
+            margin-left:15px;
+            padding-left:15px;
+            padding-right:15px;
+            padding-top:3px;
+            padding-bottom:3px;
+            color:black;
+        }
+        a:hover{
+            background-color:aquamarine;
+            font-size:90%;
+            border-radius:10px;
+        }
+        body{
+            background-color:snow;
+            backdrop-filter: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="{% url 'calculate' %}">Home</a>
+        <a href="{% url 'calculation' %}">Sign Up</a>
+        <a href="{% url 'user_login' %}">Log-in</a>
+    </div>
+    <hr>
+    Welcome to our project........
+</body>
+</html>
